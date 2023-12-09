@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - github_actions
+      - github
 
 
 jobs:
@@ -21,6 +21,9 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker Image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/laravel_on2
+
+      - name: Remove Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/laravel_on2
 
 
