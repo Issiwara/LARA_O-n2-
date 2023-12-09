@@ -23,6 +23,5 @@ jobs:
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/laravel_on2
 
-      - name: Remove Docker Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/laravel_on2
+
 
